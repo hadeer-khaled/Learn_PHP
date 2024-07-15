@@ -12,5 +12,11 @@
         return basename($_SERVER['REQUEST_URI'] ) === $value.".php";
     }
 
+    function abort($value = 404){
+        http_response_code($value);
+        require 'views/'.$value.'.view.php';
+        die();
+    }
+
 
 ?>

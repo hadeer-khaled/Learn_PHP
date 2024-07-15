@@ -16,8 +16,15 @@
 
     $post= $db->query("select * from posts where id = :id" , [':id' => $id])->fetch(PDO::FETCH_ASSOC);
 
-    // dd($post);
+    if(! $post){
+        abort();
+    }
 
+    if($post['user_id'] !== 1){
+        abort(403);
+    }
+  
+  
 
     require '../views/post.view.php' ;
 
