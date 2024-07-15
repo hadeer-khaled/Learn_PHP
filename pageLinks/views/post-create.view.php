@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Craete Post</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-full">
@@ -14,7 +14,6 @@
     $currentDir = __DIR__;
     $navPath = $currentDir . '\partials\nav.php';
     $headerPath = $currentDir . '\partials\header.php';
-    // var_dump($navPath);
 
     ?>
     <?php require($navPath) ?>
@@ -23,16 +22,15 @@
  
     <main>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <a class="btn" href="../controllers/post-create.php">
-                Create a Post
-        </a>
-        <?php  foreach($posts as $post): ?>
-            <div>
-                <a href="../controllers/post?id=<?= $post['id']?>" class="text-blue-500 hover:underline">
-                    <h2> <?= htmlspecialchars( $post['title'] )?></h2>
-                </a>
-            </div>
-        <?php endforeach; ?>
+                <form method = "POST" action ="">
+                    <label for="title">Title</label>
+                    <input  id="title" name = "title"/>
+
+                    <label for="content">Content</label>
+                    <textarea id="content" name = "content"></textarea>
+
+                    <button class="btn">Add</button>
+                </form>    
         </div>
     </main>
     </div>

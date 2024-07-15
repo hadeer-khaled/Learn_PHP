@@ -11,7 +11,7 @@
     $password = '';
     $db = new Database($config, $user ,   $password );
 
-    $posts= $db->query("select * from posts where user_id = 1")->fetchAll(PDO::FETCH_ASSOC);
+    $posts= $db->query("select * from posts where user_id = 1")->get();
 
     require '../views/posts.view.php' ;
 

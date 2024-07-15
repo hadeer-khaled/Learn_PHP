@@ -33,7 +33,7 @@ class Database {
         if(! $result) {abort();}
         return $result;
     }
-    public function fetchAll(){
+    public function get(){
        return $this->statement->fetchAll(PDO::FETCH_ASSOC);
     }
     
