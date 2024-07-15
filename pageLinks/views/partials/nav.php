@@ -12,6 +12,7 @@
                 <a href="../controllers/index.php" class=" <?php echo urlIs("index") ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-white">Home</a>
                 <a href="../controllers/about.php" class="<?php echo  urlIs("about")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
                 <a href="../controllers/contact.php" class="<?php echo  urlIs("contact")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                <a href="../controllers/posts.php" class="<?php echo  urlIs("posts")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Posts</a>
       
                 </div>
             </div>

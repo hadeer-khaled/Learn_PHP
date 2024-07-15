@@ -24,18 +24,15 @@ require 'Database.php';
     }
 
  
-    $config  = require('config.php');
-    $user = 'root';
-    $password = '';
-    $db = new Database($config, $user ,   $password );
 
-    $id = $_GET['id'];
+
+    // $id = $_GET['id'];
 
     // $query = "select * from posts where id={$id}"; // allow sql injection vulnerabilities
    
-    $query = "select * from posts where id= ?";   // prevent sql injection vulnerabilities
-    $post =$db->query($query , [$id])->fetch(PDO::FETCH_ASSOC);
-    dd($post);
+    // $query = "select * from posts where id= ?";   // prevent sql injection vulnerabilities
+    // $post =$db->query($query , [$id])->fetch(PDO::FETCH_ASSOC);
+    // dd($post);
 
     //------------OR ------------ \\
     // $query = "select * from posts where id= :id";   // prevent sql injection vulnerabilities

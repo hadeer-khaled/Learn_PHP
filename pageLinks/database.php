@@ -22,6 +22,6 @@ class Database {
         // return $statement->fetchAll(PDO::FETCH_ASSOC);
         return $statement ;
     }
-  
+    
 }
 ?>
