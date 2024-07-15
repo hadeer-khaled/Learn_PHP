@@ -9,14 +9,12 @@
    
 
     $config  = require('./../config.php');
-    $user = 'root';
-    $password = '';
-    $db = new Database($config, $user ,   $password );
+    $db = new Database($config );
 
 
     $id = $_GET['id'];
 
-    $post= $db->query("select * from posts where id = :id" , [':id' => $id])->fetch(PDO::FETCH_ASSOC);
+    $post= $db->query("select * from posts where id = :id" , [':id' => $id])->findOrFail();
 
     if(! $post){
         abort();
