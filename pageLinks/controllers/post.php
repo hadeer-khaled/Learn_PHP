@@ -3,6 +3,8 @@
     $heading = "Post";
 
     require './../Database.php';
+    require './../Response.php';
+
     require './../helper_functions.php';
    
 
@@ -20,8 +22,10 @@
         abort();
     }
 
-    if($post['user_id'] !== 1){
-        abort(403);
+    $loggedInUser =  1;
+
+    if($post['user_id'] !== $loggedInUser){
+        abort(Response::UNAUTHORIZED);
     }
   
   
