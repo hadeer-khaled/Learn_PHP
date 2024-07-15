@@ -1,7 +1,7 @@
 <?php
 
 require 'helper_functions.php';
-require 'database.php';
+require 'Database.php';
 
 // require 'routes.php';
 
