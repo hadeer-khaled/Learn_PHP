@@ -7,6 +7,7 @@
         echo "</pre>" ;
         die();
     }
+    
     function urlIs($value){
         return basename($_SERVER['REQUEST_URI'] ) === $value.".php";
     }
