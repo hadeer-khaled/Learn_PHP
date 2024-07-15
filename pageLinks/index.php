@@ -27,15 +27,19 @@ require 'Database.php';
     $config  = require('config.php');
     $user = 'root';
     $password = '';
-
     $db = new Database($config, $user ,   $password );
-    $posts =$db->query('select * from posts')->fetchAll(PDO::FETCH_ASSOC);
-    
-    foreach ($posts as $post) {
-        echo "<div>";
-        echo "<h2>". $post["title"]  ."</h2>";
-        echo "<p>". $post["content"]  ."</p>";
-        echo "</div>";
-    }
+
+    $id = $_GET['id'];
+
+    // $query = "select * from posts where id={$id}"; // allow sql injection vulnerabilities
+   
+    $query = "select * from posts where id= ?";   // prevent sql injection vulnerabilities
+    $post =$db->query($query , [$id])->fetch(PDO::FETCH_ASSOC);
+    dd($post);
+
+    //------------OR ------------ \\
+    // $query = "select * from posts where id= :id";   // prevent sql injection vulnerabilities
+    // $post =$db->query($query , [':id' =>$id])->fetch(PDO::FETCH_ASSOC);
+
 
 ?>
