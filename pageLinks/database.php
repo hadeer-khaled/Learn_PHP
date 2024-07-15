@@ -4,12 +4,12 @@ class Database {
 
     public $connection ;
 
-    public function __construct(){
+    public function __construct($config , $user ,   $password){
 
-        $dsn = "mysql:host=localhost;port=3306;dbname=php;";
-        $user = 'root';
-        $password = '';
-    
+        //  var_dump(http_build_query($config, '',';')); 'host=localhost;port=3306;dbname=php'
+
+        $dsn = 'mysql:'.http_build_query($config, '',';');
+        // $dsn = "mysql:host=localhost;port=3306;dbname=php;";
         $this->connection = new PDO($dsn, $user, $password);
         
     }
@@ -24,14 +24,4 @@ class Database {
     }
   
 }
-
-    $db = new Database();
-    $posts =$db->query('select * from posts')->fetchAll(PDO::FETCH_ASSOC);
-    
-    foreach ($posts as $post) {
-        echo "<div>";
-        echo "<h2>". $post["title"]  ."</h2>";
-        echo "<p>". $post["content"]  ."</p>";
-        echo "</div>";
-    }
 ?>

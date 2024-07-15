@@ -23,4 +23,19 @@ require 'Database.php';
         require './controllers/contact.php';
     }
 
+ 
+    $config  = require('config.php');
+    $user = 'root';
+    $password = '';
+
+    $db = new Database($config, $user ,   $password );
+    $posts =$db->query('select * from posts')->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($posts as $post) {
+        echo "<div>";
+        echo "<h2>". $post["title"]  ."</h2>";
+        echo "<p>". $post["content"]  ."</p>";
+        echo "</div>";
+    }
+
 ?>
