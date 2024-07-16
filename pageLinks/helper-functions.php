@@ -12,14 +12,21 @@
         return basename($_SERVER['REQUEST_URI'] ) === $value.".php";
     }
 
-    function abort($value = 404){
-        http_response_code($value);
-        require 'views/'.$value.'.view.php';
-        die();
-    }
+
 
     function base_path($path){
         return BASE_PATH . $path ;
+    }
+    function view($path , $attributes =[]){
+        // return base_path("/views/".$path) ;
+
+        extract($attributes);
+        require base_path("/views/".$path) ;
+    }
+    function abort($value = 404){
+        http_response_code($value);
+        require view('/'.$value.'.view.php');
+        die();
     }
 
 
