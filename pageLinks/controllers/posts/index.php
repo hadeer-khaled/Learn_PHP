@@ -10,6 +10,6 @@
 
     $posts= $db->query("select * from posts where user_id = 1")->get();
 
-    require  base_path('/views/posts/posts.view.php') ;
+    require  base_path('/views/posts/index.view.php') ;
 
 ?>

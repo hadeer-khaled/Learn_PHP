@@ -9,9 +9,9 @@ $routes = [
     "$home/" =>  'controllers/index.php',
     "$home/about" =>  'controllers/about.php',
     "$home/contact" =>  'controllers/contact.php',
-    "$home/posts" =>  'controllers/posts/posts.php',
-    "$home/post" =>  'controllers/posts/post.php',
-    "$home/post-create" =>  'controllers/posts/post-create.php',
+    "$home/posts" =>  'controllers/posts/index.php',
+    "$home/post" =>  'controllers/posts/show.php',
+    "$home/post-create" =>  'controllers/posts/create.php',
 ];
 
 routeToController($uri , $routes );

@@ -21,6 +21,6 @@
     }
   
   
-    require  base_path('/views/posts/post.view.php') ;
+    require  base_path('/views/posts/show.view.php') ;
 
 ?>  
