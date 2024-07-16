@@ -2,22 +2,19 @@
 $heading = "Create a Post";
 require '../helper_functions.php';
 require './../Database.php';
+require './../Validator.php';
 
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    if (strlen($_POST['title']) === 0) {
-        $errors['title'] = "Title is required";
+
+    if (! Validator::string($_POST['title'] , 1 , 100)) {
+        $errors['title'] = "Title is required and cannot be more than 100 characters ";
     }
-    if (strlen($_POST['title']) > 100) {
-        $errors['title'] = "Title cannot be more than 100";
+    if (! Validator::string($_POST['content'] , 1 , 100)) {
+        $errors['content'] = "Content is required and cannot be more than 1000 characters ";
     }
-    if (strlen($_POST['content']) === 0) {
-        $errors['content'] = "Content is required";
-    }
-    if (strlen($_POST['content']) > 1000) {
-        $errors['content'] = "Content cannot be more than 1000";
-    }
+
     if (empty($errors)) {
         $config = require('./../config.php');
         $db = new Database($config);
