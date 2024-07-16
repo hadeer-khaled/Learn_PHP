@@ -21,6 +21,7 @@
     }
   
   
-    require  base_path('/views/posts/show.view.php') ;
+    view('posts/show.view.php', ["heading"=>"Post" , "post" => $post]) ;
+
 
 ?>  

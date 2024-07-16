@@ -24,6 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         ]);
     }
 }
+view('posts/create.view.php', ["heading"=>"Create a post"]) ;
 
-require  base_path('/views/posts/create.view.php') ;
 ?>
