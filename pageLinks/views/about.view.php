@@ -10,16 +10,10 @@
 
     <div class="min-h-full">
    
-    <?php
-    $currentDir = __DIR__;
-    $navPath = $currentDir . '\partials\nav.php';
-    $headerPath = $currentDir . '\partials\header.php';
-    // var_dump($navPath);
+        
+    <?php require base_path('/views/partials/nav.php')?>
 
-    ?>
-    <?php require($navPath) ?>
-
-    <?php require($headerPath) ?>
+    <?php require base_path('/views/partials/header.php') ?>
     <main>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 Hello  from about page      

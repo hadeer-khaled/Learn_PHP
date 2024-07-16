@@ -1,8 +1,7 @@
 <?php
 $heading = "Create a Post";
-require '../../helper_functions.php';
-require './../../Database.php';
-require './../../Validator.php';
+require(base_path('/Validator.php'));
+
 
 $errors = [];
 
@@ -16,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 
     if (empty($errors)) {
-        $config = require('./../../config.php');
+        $config  = require(base_path('/config.php'));
         $db = new Database($config);
         $db->query("INSERT INTO posts (title, content, user_id) VALUES (:title, :content, :user_id)", [
             ":title" => $_POST['title'],
@@ -26,5 +25,5 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 }
 
-require '../../views/posts/post-create.view.php';
+require  base_path('/views/posts/post-create.view.php') ;
 ?>

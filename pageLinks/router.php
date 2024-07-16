@@ -10,6 +10,8 @@ $routes = [
     "$home/about" =>  'controllers/about.php',
     "$home/contact" =>  'controllers/contact.php',
     "$home/posts" =>  'controllers/posts/posts.php',
+    "$home/post" =>  'controllers/posts/post.php',
+    "$home/post-create" =>  'controllers/posts/post-create.php',
 ];
 
 routeToController($uri , $routes );

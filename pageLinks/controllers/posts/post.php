@@ -2,13 +2,7 @@
 
     $heading = "Post";
 
-    require './../../Database.php';
-    require './../../Response.php';
-
-    require './../../helper_functions.php';
-   
-
-    $config  = require('./../../config.php');
+    $config  = require(base_path('/config.php'));
     $db = new Database($config );
 
 
@@ -27,7 +21,6 @@
     }
   
   
-
-    require '../../views/posts/post.view.php' ;
+    require  base_path('/views/posts/post.view.php') ;
 
 ?>  

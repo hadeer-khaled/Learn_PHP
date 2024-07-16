@@ -2,17 +2,14 @@
 
     $heading = "Posts";
 
-    require './../../Database.php';
-    require './../../helper_functions.php';
-   
 
-    $config  = require('./../../config.php');
+    $config  = require(base_path('/config.php'));
     $user = 'root';
     $password = '';
     $db = new Database($config, $user ,   $password );
 
     $posts= $db->query("select * from posts where user_id = 1")->get();
 
-    require '../../views/posts/posts.view.php' ;
+    require  base_path('/views/posts/posts.view.php') ;
 
 ?>
