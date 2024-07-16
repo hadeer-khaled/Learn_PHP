@@ -2,6 +2,5 @@
 
 $heading = "Contact Us";
 
-require './../helper_functions.php';
-require '../views/contact.view.php' ;
+require 'views/contact.view.php' ;
 ?>

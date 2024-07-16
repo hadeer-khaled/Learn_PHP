@@ -2,13 +2,13 @@
 
     $heading = "Post";
 
-    require './../Database.php';
-    require './../Response.php';
+    require './../../Database.php';
+    require './../../Response.php';
 
-    require './../helper_functions.php';
+    require './../../helper_functions.php';
    
 
-    $config  = require('./../config.php');
+    $config  = require('./../../config.php');
     $db = new Database($config );
 
 
@@ -28,6 +28,6 @@
   
   
 
-    require '../views/post.view.php' ;
+    require '../../views/posts/post.view.php' ;
 
 ?>  

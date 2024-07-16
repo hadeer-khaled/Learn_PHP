@@ -1,4 +1,6 @@
-
+<?php 
+    $home = '/etax/Learn_PHP/pageLinks' ;
+?>
 <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -9,10 +11,10 @@
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="../controllers/index.php" class=" <?php echo urlIs("index") ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-white">Home</a>
-                <a href="../controllers/about.php" class="<?php echo  urlIs("about")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                <a href="../controllers/contact.php" class="<?php echo  urlIs("contact")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-                <a href="../controllers/posts.php" class="<?php echo  urlIs("posts")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Posts</a>
+                <a href="<?=$home ?>/" class=" <?php echo urlIs("index") ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-white">Home</a>
+                <a href="<?=$home ?>/about" class="<?php echo  urlIs("about")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="<?=$home ?>/contact" class="<?php echo  urlIs("contact")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                <a href="<?=$home ?>/posts" class="<?php echo  urlIs("posts")  ? "bg-gray-900 text-white" : "text-gray-300" ; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Posts</a>
       
                 </div>
             </div>

@@ -10,15 +10,13 @@
 
     <div class="min-h-full">
 
-    <?php
-        $currentDir = __DIR__;
-        $navPath = $currentDir . '\partials\nav.php';
-    ?>
-    <?php require($navPath) ?>
+
+    <?php $home = '/etax/Learn_PHP/pageLinks' ;?>
 
     <main>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                Sorry, We cannot find this page     
+                Sorry, We cannot find this page    
+                <a href="<?=$home ?>/" class="text-blue-500">Go Home</a> 
         </div>
     </main>
     </div>

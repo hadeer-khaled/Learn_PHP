@@ -10,25 +10,16 @@
 
     <div class="min-h-full">
         
-    <?php
-    $currentDir = __DIR__;
-    $navPath = $currentDir . '\partials\nav.php';
-    $headerPath = $currentDir . '\partials\header.php';
-    // var_dump($navPath);
 
-    ?>
-    <?php require($navPath) ?>
-
-    <?php require($headerPath) ?>
  
     <main>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <a class="btn" href="../controllers/post-create.php">
+        <a class="btn" href="../../controllers/posts/post-create.php">
                 Create a Post
         </a>
         <?php  foreach($posts as $post): ?>
             <div>
-                <a href="../controllers/post?id=<?= $post['id']?>" class="text-blue-500 hover:underline">
+                <a href="../../controllers/posts/post?id=<?= $post['id']?>" class="text-blue-500 hover:underline">
                     <h2> <?= htmlspecialchars( $post['title'] )?></h2>
                 </a>
             </div>
