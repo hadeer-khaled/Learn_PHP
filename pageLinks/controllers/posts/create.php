@@ -1,6 +1,8 @@
 <?php
+    use Core\Validator ; 
+
 $heading = "Create a Post";
-require(base_path('/Core/Validator.php'));
+// require(base_path('/Core/Validator.php'));
 
 
 $errors = [];
