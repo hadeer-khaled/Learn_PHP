@@ -17,6 +17,7 @@ $home = '/etax/Learn_PHP/pageLinks' ;
     $router->get($home.'/post' ,  '/controllers/posts/show.php');
     $router->get($home.'/post-create' ,  '/controllers/posts/create.php');
     $router->post($home.'/post-create' ,  '/controllers/posts/create.php');
+    $router->delete($home.'/post' ,  '/controllers/posts/destroy.php');
 
 
 ?>
