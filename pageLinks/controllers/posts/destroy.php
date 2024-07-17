@@ -1,11 +1,14 @@
 <?php
 
 use Core\Database ; 
+use Core\App ; 
 
     $heading = "Post";
 
     $config  = require(base_path('/config.php'));
-    $db = new Database($config );
+    // $db = new Database($config );
+
+    $db = App::container()->resolve('Core\Database');
 
 
     // dd($_POST);
