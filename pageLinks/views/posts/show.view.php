@@ -19,6 +19,11 @@
             <div>
                     <h2> <?php echo $key. " : "  .$value ?></h2>
             </div>
+            <form>
+                <input type ="hidden" name ="_method" value="DELETE"/>
+                <input type ="hidden" name ="delete" value="<?= $post['id']?>"/>
+                <button class="text-red-500 text-sm">Delete</button>
+            </form>
         <?php endforeach; ?>
         </div>
     </main>

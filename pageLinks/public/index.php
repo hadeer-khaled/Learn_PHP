@@ -1,16 +1,23 @@
 <?php
+
+use Core\Router ;
+
 define('BASE_PATH', realpath(__DIR__ . "/../"));
 
 require BASE_PATH . '/Core/helper-functions.php';
-// require BASE_PATH . '/Database.php';
-// require BASE_PATH . '/Response.php';
 
 spl_autoload_register(function($class) {
-    // dd($class) ; //Core\Database
     require base_path("/" . $class .".php");
 });
 
-require BASE_PATH . '/router.php';
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'] ; 
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'] ;
+
+
+$router = new Router();
+$routes = require base_path("/routes.php");
+
+$router->route($uri  , $method);
 
 
 ?>
