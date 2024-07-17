@@ -1,5 +1,6 @@
 <?php
 
+    use Core\Database ; 
     $heading = "Posts";
 
 

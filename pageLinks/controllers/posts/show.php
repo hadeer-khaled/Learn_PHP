@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database ; 
+
     $heading = "Post";
 
     $config  = require(base_path('/config.php'));
