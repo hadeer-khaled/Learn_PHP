@@ -23,7 +23,10 @@ use Core\Database ;
         abort(Response::UNAUTHORIZED);
     }
   
-    $post= $db->query("delete from posts where id = :id" , [':id' => $id]);
+   $db->query("delete from posts where id = :id" , [':id' => $id]);
+
+    header("location: /etax/Learn_PHP/pageLinks/posts");
+    exit();
 
     // view('posts/show.view.php', ["heading"=>"Post" , "post" => $post]) ;
 
