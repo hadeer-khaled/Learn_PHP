@@ -1,7 +1,9 @@
 <?php 
     $home = '/etax/Learn_PHP/pageLinks' ;
+    session_start();
 ?>
 <nav class="bg-gray-800">
+
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
@@ -21,6 +23,11 @@
             </div>
             <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
+                <?php if(isset($_SESSION['user']) ?? false) :?>
+                        <p class="text-white">Logged In</p>
+                <?php else :?>
+                        <a href="<?= HOME?>/register" class="text-white">Register</a>
+                <?php endif ;?>
                 <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">View notifications</span>
@@ -37,6 +44,7 @@
                     <span class="sr-only">Open user menu</span>
                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                     </button>
+                
                 </div>
 
                 <!--

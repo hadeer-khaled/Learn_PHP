@@ -23,6 +23,8 @@ $home = '/etax/Learn_PHP/pageLinks' ;
     $router->post($home.'/posts' ,  '/controllers/posts/store.php');
 
     $router->delete($home.'/post' ,  '/controllers/posts/destroy.php');
-
+    
+    $router->get($home.'/register' ,  '/controllers/registeration/create.php');
+    $router->post($home.'/register' ,  '/controllers/registeration/store.php');
 
 ?>
