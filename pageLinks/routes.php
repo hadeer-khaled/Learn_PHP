@@ -30,4 +30,6 @@ $home = '/etax/Learn_PHP/pageLinks' ;
     
     $router->get($home.'/login' ,  '/controllers/sessions/create.php');
     $router->post($home.'/login' ,  '/controllers/sessions/store.php');
+
+    $router->delete($home.'/logout' ,  '/controllers/sessions/logout.php');
     ?>

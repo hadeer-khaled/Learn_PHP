@@ -23,7 +23,11 @@
             <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
                 <?php if(isset($_SESSION['user']) ?? false) :?>
-                        <p class="text-white">Logged In</p>
+                        <!-- <a href="<?= HOME?>/logout" class="text-white">Logout</a> -->
+                        <form action="<?= HOME?>/logout" method = "POST">
+                            <input type="hidden" name = "_method" value = "DELETE">
+                            <button>Logout</button>
+                        </form>
                 <?php else :?>
                         <a href="<?= HOME?>/register" class="text-white mx-5">Register</a>
                         <a href="<?= HOME?>/login" class="text-white">Login</a>
