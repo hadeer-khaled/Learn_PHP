@@ -1,6 +1,5 @@
 <?php 
     $home = '/etax/Learn_PHP/pageLinks' ;
-    session_start();
 ?>
 <nav class="bg-gray-800">
 

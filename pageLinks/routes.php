@@ -13,7 +13,8 @@ $home = '/etax/Learn_PHP/pageLinks' ;
     $router->get($home.'/' ,  '/controllers/index.php');
     $router->get($home.'/about' ,  '/controllers/about.php');
     $router->get($home.'/contact' ,  '/controllers/contact.php');
-    $router->get($home.'/posts' ,  '/controllers/posts/index.php');
+
+    $router->get($home.'/posts' ,  '/controllers/posts/index.php')->only("auth");
     $router->get($home.'/post' ,  '/controllers/posts/show.php');
 
     $router->get($home.'/post-edit' ,  '/controllers/posts/edit.php');
@@ -24,7 +25,7 @@ $home = '/etax/Learn_PHP/pageLinks' ;
 
     $router->delete($home.'/post' ,  '/controllers/posts/destroy.php');
     
-    $router->get($home.'/register' ,  '/controllers/registeration/create.php');
+    $router->get($home.'/register' ,  '/controllers/registeration/create.php')->only("guest");
     $router->post($home.'/register' ,  '/controllers/registeration/store.php');
 
 ?>
