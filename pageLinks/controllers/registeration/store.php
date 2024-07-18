@@ -32,15 +32,14 @@ if($user){
 
     $db->query("INSERT INTO users (email, password) VALUES (:email, :password)", [
         ":email" => $_POST['email'],
-        ":password" => $_POST['password'],
+        ":password" => password_hash($_POST['password'] , PASSWORD_BCRYPT),
        
     ]);
 
-    session_start();
 
-    $_SESSION['user']=['email'=>$_POST['email']];
+    // login($user);
     // dd(session_save_path());
-    header("location: /etax/Learn_PHP/pageLinks/posts");
+    header("location: /etax/Learn_PHP/pageLinks/login");
     exit();
 }
 

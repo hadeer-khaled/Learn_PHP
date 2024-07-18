@@ -25,7 +25,8 @@
                 <?php if(isset($_SESSION['user']) ?? false) :?>
                         <p class="text-white">Logged In</p>
                 <?php else :?>
-                        <a href="<?= HOME?>/register" class="text-white">Register</a>
+                        <a href="<?= HOME?>/register" class="text-white mx-5">Register</a>
+                        <a href="<?= HOME?>/login" class="text-white">Login</a>
                 <?php endif ;?>
                 <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5"></span>
@@ -40,7 +41,7 @@
                 <div>
                     <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
+                    <!-- <span class="sr-only">Open user menu</span> -->
                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                     </button>
                 

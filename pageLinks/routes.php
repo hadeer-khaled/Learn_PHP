@@ -27,5 +27,7 @@ $home = '/etax/Learn_PHP/pageLinks' ;
     
     $router->get($home.'/register' ,  '/controllers/registeration/create.php')->only("guest");
     $router->post($home.'/register' ,  '/controllers/registeration/store.php');
-
-?>
+    
+    $router->get($home.'/login' ,  '/controllers/sessions/create.php');
+    $router->post($home.'/login' ,  '/controllers/sessions/store.php');
+    ?>
