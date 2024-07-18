@@ -1,5 +1,7 @@
 <?php
 namespace Core ;
+use Core\Middleware\Auth ;
+use Core\Middleware\Guest;
 class Router{
     
     protected $routes = [] ;
@@ -78,17 +80,10 @@ class Router{
 
                 if($route['middleware'] === "guest"){
                     // dd($_SESSION['user'] );
-                    var_dump($_SESSION);
-                    if($_SESSION['user'] ?? false){
-                        header("location: /etax/Learn_PHP/pageLinks/");
-                        exit();
-                    }
+                   (new Guest)->handle();
                 }
                 if($route['middleware'] === "auth"){
-                    if(! $_SESSION['user'] ?? false){
-                        header("location: /etax/Learn_PHP/pageLinks/");
-                        exit();
-                    }
+                    (new Auth)->handle();
                 }
 
                 return require base_path($route['controller']);
