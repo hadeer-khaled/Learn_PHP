@@ -15,8 +15,11 @@ $home = '/etax/Learn_PHP/pageLinks' ;
     $router->get($home.'/contact' ,  '/controllers/contact.php');
     $router->get($home.'/posts' ,  '/controllers/posts/index.php');
     $router->get($home.'/post' ,  '/controllers/posts/show.php');
-    $router->get($home.'/post-create' ,  '/controllers/posts/create.php');
 
+    $router->get($home.'/post-edit' ,  '/controllers/posts/edit.php');
+    $router->patch($home.'/post' ,  '/controllers/posts/update.php');
+    
+    $router->get($home.'/post-create' ,  '/controllers/posts/create.php');
     $router->post($home.'/posts' ,  '/controllers/posts/store.php');
 
     $router->delete($home.'/post' ,  '/controllers/posts/destroy.php');

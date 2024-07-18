@@ -1,13 +1,14 @@
 <?php
+    use Core\App ; 
 
-    use Core\Database ; 
     $heading = "Posts";
 
+    $db = App::container()->resolve('Core\Database');
 
     $config  = require(base_path('/config.php'));
     $user = 'root';
     $password = '';
-    $db = new Database($config, $user ,   $password );
+    // $db = new Database($config, $user ,   $password );
 
     $posts= $db->query("select * from posts where user_id = 1")->get();
 

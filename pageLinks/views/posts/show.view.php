@@ -20,6 +20,7 @@
                     <h2> <?php echo $key. " : "  .$value ?></h2>
             </div>
             <?php endforeach; ?>
+            <a href="<?= HOME?>/post-edit?id=<?=$post["id"]?>" class="text-green-400">Edit</a>
             <form method="POST">
                 <input type ="hidden" name ="_method" value="DELETE"/>
                 <input type ="hidden" name ="id" value="<?= $post['id']?>"/>

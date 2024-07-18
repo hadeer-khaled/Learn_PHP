@@ -1,5 +1,6 @@
 <?php
 
+
 use Core\App ; 
 
     $heading = "Post";
@@ -7,8 +8,7 @@ use Core\App ;
     $db = App::container()->resolve('Core\Database');
 
 
-    // dd($_POST);
-    $id = $_POST['id'];
+    $id = $_GET['id'];
 
     $post= $db->query("select * from posts where id = :id" , [':id' => $id])->findOrFail();
 
@@ -21,13 +21,7 @@ use Core\App ;
     if($post['user_id'] !== $loggedInUser){
         abort(Response::UNAUTHORIZED);
     }
-  
-   $db->query("delete from posts where id = :id" , [':id' => $id]);
 
-    header("location: /etax/Learn_PHP/pageLinks/posts");
-    exit();
+view('posts/edit.view.php', ["heading"=>"Edit a post","post"=>$post ,"errors"=> []]) ;
 
-    // view('posts/show.view.php', ["heading"=>"Post" , "post" => $post]) ;
-
-
-?>  
+?>

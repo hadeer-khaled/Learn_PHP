@@ -4,6 +4,21 @@
 
     $db = App::container()->resolve('Core\Database');
 
+    $id = $_POST['id'];
+
+    $post= $db->query("select * from posts where id = :id" , [':id' => $id])->findOrFail();
+
+    if(! $post){
+        abort();
+    }
+
+    $loggedInUser =  1;
+
+    if($post['user_id'] !== $loggedInUser){
+        abort(Response::UNAUTHORIZED);
+    }
+
+
     $errors = [];
 
 
@@ -15,14 +30,13 @@
     }
 
     if (!empty($errors)) {
-        view('posts/create.view.php', ["heading"=>"Create a post", "errors"=> $errors]) ;
+        view('posts/edit.view.php', ["heading"=>"Edit a post", "errors"=> $errors , "post"=> $post]) ;
 
     }
     if (empty($errors)) {
-        $db->query("INSERT INTO posts (title, content, user_id) VALUES (:title, :content, :user_id)", [
+        $db->query("UPDATE posts set title = :title   where id = :id", [
             ":title" => $_POST['title'],
-            ":content" => $_POST['content'],
-            ":user_id" => 1
+            ":id" => $_POST['id']
         ]);
         header("location: /etax/Learn_PHP/pageLinks/posts");
         exit();
