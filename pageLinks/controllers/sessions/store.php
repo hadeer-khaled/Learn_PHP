@@ -8,19 +8,18 @@ use Core\Authenticator;
 $db = App::container()->resolve('Core\Database');
 
 $form = new LoginForm() ;
-$auth = new Authenticator() ;
 
-if (! $form->validate($_POST['email'] , $_POST['password'])){
-    view('sessions/create.view.php', ["heading"=>"Login", "errors"=> $form->errors]) ;
+if ($form->validate($_POST['email'] , $_POST['password'])){
+    $auth = new Authenticator() ;
+
+    if( $auth->attepmts($_POST['email'],  $_POST['password'])){
+        redirect('/');
+    }
+    $form->error("email" , "wrong email or password") ;
+    $form->error("password"  ,  "wrong email or password") ;
+
 }
 
+return view('sessions/create.view.php', ["heading"=>"Login", "errors"=> $form->errors()]) ;
 
-if( $auth->attepmts($_POST['email'],  $_POST['password'])){
-    redirect('/');
-}else{
-
-    return view('sessions/create.view.php', ["heading"=>"Login", "errors"=> ["email"=>"wrong email or password" ,"password"=>"wrong email or password" ]]) ;
-}
-
-// dd($user);
 ?>
