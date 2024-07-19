@@ -33,12 +33,7 @@
         die();
     }
 
-    function login($user){
 
-        session_start();
-
-        $_SESSION['user']= [ "email"=> $user['email']];
-    }
 
     function logout(){
 
