@@ -1,26 +1,18 @@
 <?php
 
-use Core\Validator ; 
+
 use Core\App ; 
+use Http\Forms\LoginForm;
 
 $db = App::container()->resolve('Core\Database');
 
-$errors = [];
+$form = new LoginForm() ;
 
-
-if (! Validator::string($_POST['email'] , 1 , 100)) {
-    $errors['email'] = "Invalid Email";
-}
-if (! Validator::string($_POST['password'] )) {
-    $errors['password'] = "password doesnot match  ";
+if (! $form->validate($_POST['email'] , $_POST['password'])){
+    view('sessions/create.view.php', ["heading"=>"Login", "errors"=> $form->errors]) ;
 }
 
-if (!empty($errors)) {
-    view('sessions/create.view.php', ["heading"=>"Login", "errors"=> $errors]) ;
 
-}
-
-// dd($_POST);
 $user = $db->query("select * from users where email = :email", [
     ":email" => $_POST['email'],   
 ])->find();
