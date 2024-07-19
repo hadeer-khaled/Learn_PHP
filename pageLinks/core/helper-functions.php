@@ -33,10 +33,7 @@
         die();
     }
 
-
-
     function logout(){
-
 
         $_SESSION= [];
         session_destroy();
@@ -44,6 +41,10 @@
         setcookie("PHPSESSID",'' , time()-3600 , $params['path'], $params['domain'], $params['secure'], $params['httponly']);
     }
 
+    function redirect($path){
+        header("location: /etax/Learn_PHP/pageLinks".$path);
+        exit();
+    }
 
 
 

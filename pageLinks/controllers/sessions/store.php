@@ -16,8 +16,7 @@ if (! $form->validate($_POST['email'] , $_POST['password'])){
 
 
 if( $auth->attepmts($_POST['email'],  $_POST['password'])){
-    header("location: /etax/Learn_PHP/pageLinks/");
-    exit();
+    redirect('/');
 }else{
 
     return view('sessions/create.view.php', ["heading"=>"Login", "errors"=> ["email"=>"wrong email or password" ,"password"=>"wrong email or password" ]]) ;
