@@ -6,11 +6,14 @@ define('BASE_PATH', realpath(__DIR__ . "/../"));
 
 define('HOME','/etax/Learn_PHP/pageLinks');
 
-require BASE_PATH . '/Core/helper-functions.php';
 
-spl_autoload_register(function($class) {
-    require base_path("/" . $class .".php");
-});
+// spl_autoload_register(function($class) {
+    //     require base_path("/" . $class .".php");
+    // });
+    
+require  BASE_PATH . "/vendor/autoload.php";
+
+require BASE_PATH . '/Core/helper-functions.php';
 
 require base_path("/bootstrap.php");
 

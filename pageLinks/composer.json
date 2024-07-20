@@ -1,0 +1,10 @@
+{
+    "name": "hadeer_khaled/page-links",
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
